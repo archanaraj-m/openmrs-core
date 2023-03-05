@@ -1,8 +1,8 @@
 node('OPENMRS')
 {
     stage('vcs') { 
-        git url:'https://github.com/archanaraj-m/openmrs-core.git',
-            branch: 'scripted'
+        git branch: 'scripted',
+            url:'https://github.com/archanaraj-m/openmrs-core.git'
     }
     stage ('build') {
         sh 'export PATH="/usr/lib/jvm/java-1.11.0-openjdk-amd64/bin:$PATH" && mvn package'
